@@ -1,20 +1,13 @@
-import { Component } from '@angular/core';
-import * as signalR from "@microsoft/signalr";
+import {Component} from '@angular/core';
+import {OrdersQueueService} from "./core/services/orders-queue.service";
 
 @Component({
   selector: 'app-root',
-  templateUrl: './app.component.html'
+  templateUrl: './app.component.html',
+  styleUrls: ['./app.component.scss']
 })
 export class AppComponent {
-  title = 'app';
-
-  constructor() {
-    const connection = new signalR.HubConnectionBuilder().withUrl("/chatHub").build();
-
-    connection.start().then(function () {
-      console.log('connected!!!');
-    }).catch(function (err) {
-      return console.error(err.toString());
-    });
+  constructor(private ordersQueueService: OrdersQueueService) {
+    ordersQueueService.initalizeSignalRConnection();
   }
 }

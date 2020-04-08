@@ -1,0 +1,117 @@
+:host {
+  max-width: 550px;
+  flex-grow: 1;
+  align-items: center;
+
+  transition: background-color 1s;
+
+  //For assigned stamp
+  position: relative;
+  //Prevent merged borders
+  border-top: 2px solid black;
+  border-right: 2px solid black;
+  border-bottom: 2px solid black;
+
+  animation-play-state: paused;
+
+  color: white;
+}
+
+:host.order-new {
+  background-color: #569e20;
+}
+
+:host.order-warning {
+  background-color: #ffa62e;
+}
+
+:host.order-critical {
+  background-color: #ea4d2c;
+}
+
+:host:first-of-type {
+  border-left: 2px solid black;
+}
+
+.order-container {
+  padding: 20px 30px;
+
+  height: 100%;
+  flex-direction: column;
+  flex-grow: 1;
+}
+
+.assigned-stamp {
+  width: 20%;
+  height: auto;
+
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  z-index: 100;
+}
+
+round-progress {
+  align-self: center;
+  max-width: 200px;
+  max-height: 200px;
+  min-width: 180px;
+  min-height: 180px;
+  padding-bottom: 0 !important;
+  margin-bottom: 24px;
+}
+
+.time-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.time-progress-wrapper {
+  display: flex;
+  flex-direction: column;
+
+  justify-content: center;
+  align-items: center;
+  position: relative;
+}
+
+.time-progress-text {
+  position: absolute;
+
+  line-height: 1.5em;
+  //Auto centers in flex box
+  //-1.5em equals to line-height of the text and we move it up so that text is perfectly centered
+  margin: -1.5em auto auto auto;
+}
+
+.product-category-items-wrapper {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.product-category-title {
+  font-family: 'Roboto', sans-serif;
+  font-weight: bold;
+}
+
+.mark-as-assigned-btn {
+  max-width: 225px;
+  margin-top: auto;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.products-scroll-pane {
+  overflow-x: hidden;
+  max-height: 425px;
+}
+
+.order-id {
+  text-align: center;
+  font-family: 'Roboto', sans-serif;
+}
+
+.order-id span {
+  font-weight: bold;
+}

@@ -13,7 +13,7 @@
         "build": {
           "builder": "@angular-devkit/build-angular:browser",
           "options": {
-            "progress": false,
+            "progress": true,
             "extractCss": true,
             "outputPath": "dist",
             "index": "src/index.html",
@@ -23,6 +23,7 @@
             "assets": ["src/assets"],
             "styles": [
               "node_modules/bootstrap/dist/css/bootstrap.min.css",
+              "node_modules/spinkit/spinkit.min.css",
               "src/styles.css"
             ],
             "scripts": []

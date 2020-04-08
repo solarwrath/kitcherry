@@ -1,16 +1,50 @@
-/* You can add global styles to this file, and also import other style files */
-
-/* Provide sufficient contrast against white background */
-a {
-  color: #0366d6;
+:root {
+  --sk-size: 80px !important;
+  --sk-color: #fff !important;
 }
 
-code {
-  color: #e01a76;
+html {
+  min-height: 100%;
+  display: flex;
 }
 
-.btn-primary {
-  color: #fff;
-  background-color: #1b6ec2;
-  border-color: #1861ac;
+body,
+app-root,
+app-orders-queue,
+app-orders-queue > div:only-child,
+tabset,
+.tab-content,
+.tab-pane.active,
+app-cash-box-queue,
+app-order,
+.order-container {
+  display: flex !important;
+  flex-grow: 1;
+}
+
+tabset {
+  flex-direction: column;
+}
+
+.ps__rail-y {
+  opacity: 1 !important;
+  display: block !important;
+  background-color: transparent !important;
+}
+
+perfect-scrollbar.ps-show-active > .ps.ps--active-y > .ps-overlay:not(.ps-at-bottom) .ps-indicator-bottom,
+perfect-scrollbar.ps-show-active > .ps.ps--active-y > .ps-overlay:not(.ps-at-top) .ps-indicator-top {
+  opacity: 0 !important;
+}
+
+.ps .ps__rail-x.ps--clicking, .ps .ps__rail-x:focus, .ps .ps__rail-x:hover, .ps .ps__rail-y.ps--clicking, .ps .ps__rail-y:focus, .ps .ps__rail-y:hover {
+  background: inherit !important;
+}
+
+.ps__thumb-y {
+  background: white !important;
+}
+
+.ps__rail-y, .ps__thumb-y {
+  transition: none !important;
 }

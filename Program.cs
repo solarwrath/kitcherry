@@ -1,11 +1,7 @@
-using System;
-using System.Collections.Generic;
 using System.Linq;
-using System.Threading.Tasks;
 using Microsoft.AspNetCore.Hosting;
-using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.Hosting;
-using Microsoft.Extensions.Logging;
+using Practice;
 
 namespace PLS_WORK
 {
@@ -13,6 +9,12 @@ namespace PLS_WORK
     {
         public static void Main(string[] args)
         {
+            if (args.Any(currentArg => currentArg.Equals("updateScrapedData")))
+            {
+                KFCScraper kfcScraper = new KFCScraper();
+                kfcScraper.MyScrape("\\ScrapersData\\KFC\\");
+            }
+
             CreateHostBuilder(args).Build().Run();
         }
 

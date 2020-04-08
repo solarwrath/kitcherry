@@ -1,0 +1,37 @@
+<div class="order-container">
+  <img *ngIf="order.isAssigned" src="assets/assigned_stamp.png" class="assigned-stamp">
+  <div class="time-container">
+    <h1 class="time-title">Час</h1>
+    <div class="time-progress-wrapper">
+      <p class="time-progress-text">{{elapsedTime|millisecondsToMinutes}}/{{order.estimatedCookingTime}} хв.</p>
+      <round-progress
+        [current]=elapsedTimePercentage
+        [max]="100"
+        [color]="'#ffffff'"
+        [background]="'transparent'"
+        [radius]="100"
+        [stroke]="5"
+        [rounded]="true"
+        [clockwise]="true"
+        [responsive]="true"
+        [animation]="'easeInOutQuart'"
+        [duration]="1000"
+        [animationDelay]="0"
+      ></round-progress>
+    </div>
+  </div>
+  <p class="order-id"><span>Номер замовлення:</span> {{order.id}}</p>
+  <perfect-scrollbar class="products-scroll-pane" [scrollIndicators]="true">
+    <div *ngFor="let currentCategoryData of order.products|productCategoryRemap">
+      <p class="product-category-title">{{currentCategoryData.categoryTitle}}</p>
+      <div class="product-category-items-wrapper">
+        <div *ngFor="let currentProduct of currentCategoryData.products">
+          <img [src]="currentProduct.imagePath" [alt]="currentProduct.name" height="100px">
+        </div>
+      </div>
+    </div>
+  </perfect-scrollbar>
+  <button (click)="markAsAssigned()" [disabled]="order.isAssigned" class="btn btn-primary mark-as-assigned-btn">
+    Помітити як призначене
+  </button>
+</div>

@@ -13,18 +13,34 @@
     </PropertyGroup>
 
     <ItemGroup>
+        <PackageReference Include="IronWebScraper" Version="4.0.4.3" />
         <PackageReference Include="Microsoft.AspNetCore.SpaServices.Extensions" Version="3.1.0" />
     </ItemGroup>
 
     <ItemGroup>
         <!-- Don't publish the SPA source files, but do show them in the project files list -->
         <Content Remove="$(SpaRoot)**" />
+        <Content Include="ClientApp\src\app\app.component.html" />
+        <Content Include="ClientApp\src\app\app.component.scss" />
+        <Content Include="ClientApp\src\app\ui\cash-box-queue\cash-box-queue.component.html" />
+        <Content Include="ClientApp\src\app\ui\cash-box-queue\cash-box-queue.component.scss" />
+        <Content Include="ClientApp\src\app\ui\loading-spinner\loading-spinner.component.html" />
+        <Content Include="ClientApp\src\app\ui\loading-spinner\loading-spinner.component.scss" />
+        <Content Include="ClientApp\src\app\ui\orders-queue\orders-queue.component.html" />
+        <Content Include="ClientApp\src\app\ui\orders-queue\orders-queue.component.scss" />
+        <Content Include="ClientApp\src\app\ui\order\order.component.html" />
+        <Content Include="ClientApp\src\app\ui\order\order.component.scss" />
+        <Content Include="ClientApp\src\assets\assigned_stamp.png" />
+        <Content Include="ClientApp\src\assets\glitch_error.gif" />
         <None Remove="$(SpaRoot)**" />
         <None Include="$(SpaRoot)**" Exclude="$(SpaRoot)node_modules\**" />
+        <None Include="ClientApp\src\app\core\models\raw-order.model.ts" />
     </ItemGroup>
 
     <ItemGroup>
       <_ContentIncludedByDefault Remove="ClientApp\e2e\tsconfig.e2e.json" />
+      <_ContentIncludedByDefault Remove="Pages\Error.cshtml" />
+      <_ContentIncludedByDefault Remove="Pages\_ViewImports.cshtml" />
     </ItemGroup>
 
     <Target Name="DebugEnsureNodeEnv" BeforeTargets="Build" Condition=" '$(Configuration)' == 'Debug' And !Exists('$(SpaRoot)node_modules') ">

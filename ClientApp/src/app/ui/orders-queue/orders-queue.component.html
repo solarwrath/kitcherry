@@ -1,0 +1,23 @@
+<div [ngClass]="
+{
+	'loading-background': isLoading|async,
+ 	'error-background': (loadError|async) !== null
+}
+">
+	<!-- Loading spinner shows or loaded content shows depending on the isLoading variable in the store state -->
+	<app-loading-spinner *ngIf=" (isLoading|async) && !(loadError|async)"
+						 class="d-flex justify-content-center align-items-center w-100 h-100"></app-loading-spinner>
+	<div class="load-error" *ngIf="(loadError|async) !== null">
+		<p class="load-error-message">ERROR: {{(loadError|async).message}}</p>
+		<img src="assets/glitch_error.gif">
+	</div>
+	<ng-template #loadedContent [ngIf]="!(isLoading|async) && !(loadError|async)">
+		<tabset #cashBoxTabs>
+			<tab [heading]="currentCashBoxState.id"
+				 *ngFor="let currentCashBoxState of cashBoxStateObservable| async; trackBy:trackByFunction">
+				<app-cash-box-queue [cashBoxId]="currentCashBoxState.id"
+									class="cash-box-queue-pane"></app-cash-box-queue>
+			</tab>
+		</tabset>
+	</ng-template>
+</div>

@@ -1,0 +1,23 @@
+.loading-background {
+	background: #d35400;
+	width: 100vw;
+	height: 100vh;
+}
+
+.error-background {
+	background: white;
+}
+
+.load-error {
+	display: flex;
+	flex-direction: column;
+	flex-grow: 1;
+	justify-content: center;
+	align-items: center;
+}
+
+.load-error-message {
+	color: #111111;
+	font-size: 36pt;
+	text-align: center;
+}

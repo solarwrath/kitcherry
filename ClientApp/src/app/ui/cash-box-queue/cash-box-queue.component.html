@@ -1,0 +1,2 @@
+<app-order [order]="currentOrder"
+		   *ngFor="let currentOrder of (currentCashBox|async).orders trackBy:trackByFunction" [@fadeOut]="'initial'"></app-order>
