@@ -16,7 +16,6 @@
 
   color: white;
 }
-
 :host.order-new {
   background-color: #569e20;
 }
@@ -104,14 +103,5 @@ round-progress {
 
 .products-scroll-pane {
   overflow-x: hidden;
-  max-height: 425px;
-}
-
-.order-id {
-  text-align: center;
-  font-family: 'Roboto', sans-serif;
-}
-
-.order-id span {
-  font-weight: bold;
+  max-height: 65%;
 }

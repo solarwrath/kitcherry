@@ -20,7 +20,6 @@
       ></round-progress>
     </div>
   </div>
-  <p class="order-id"><span>Номер замовлення:</span> {{order.id}}</p>
   <perfect-scrollbar class="products-scroll-pane" [scrollIndicators]="true">
     <div *ngFor="let currentCategoryData of order.products|productCategoryRemap">
       <p class="product-category-title">{{currentCategoryData.categoryTitle}}</p>

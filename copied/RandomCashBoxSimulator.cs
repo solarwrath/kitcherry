@@ -72,7 +72,7 @@ namespace Practice
         {
             while (!stoppingToken.IsCancellationRequested)
             {
-                //Wainting for the signal from client to start looping
+                //Waiting for the signal from client to start looping
                 if (IsLoopRunningHolder.Instance.LoopRunning)
                 {
                     _logger.LogInformation("Creating random order...");
