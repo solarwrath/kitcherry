@@ -31,7 +31,7 @@
     "caniuse-lite": "1.0.30001039",
     "core-js": "^3.3.3",
     "decimal.js": "^10.2.0",
-    "jquery": "3.4.1",
+    "jquery": "3.5.0",
     "lodash": "^4.17.15",
     "ngx-bootstrap": "^5.5.0",
     "ngx-perfect-scrollbar": "^9.0.0",
